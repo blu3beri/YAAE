@@ -1,6 +1,6 @@
 {
   "name": "yaae",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Yet Another Array Extension`",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
