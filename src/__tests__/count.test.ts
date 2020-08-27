@@ -18,5 +18,5 @@ test('count true from mixed array', () => {
 });
 
 test('count empty string from empty array', () => {
-	expect(emptyArray.count('')).toEqual(undefined);
+	expect(emptyArray.count('')).toBe(0);
 });
