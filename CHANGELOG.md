@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Functions:
     - ```Array.removeDuplicates()```
-    - ```Array.math(o, value)```
+    - ```Array.math(operator, value)```
 ### Changed
 - Spelling error in ```Array.duplicates()``
 - Parameter names for every function
@@ -33,8 +33,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - ```Array.last()```
     - ```Array.min()```
     - ```Array.max()```
-    - ```Array.count(i)```
-    - ```Array.includesN(i, n)```
+    - ```Array.count(item)```
+    - ```Array.includesN(item, amount)```
 - testing with jest for every function
 
 ### Changed
