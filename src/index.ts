@@ -3,48 +3,64 @@ export {};
 declare global {
 	interface Array<T> {
 		/**
-			* returns the first element of the array
+			* Returns the first element of the array
 			* 
-			* returns undefined is there is no element in the array
+			* Returns undefined is there is no element in the array
 		*/
 		first(): T;
 		/**
-			* returns the last element of the array
+			* Returns the last element of the array
 			* 
-			* returns undefined is there is no element in the array
+			* Returns undefined is there is no element in the array
 		*/
 		last(): T;
 		/**
-			* returns the highest value in the array
+			* Returns the highest value in the array
 			* 
-			* returns NaN if the array is not of type number[]
+			* Returns NaN if the array is not of type number[]
 		*/
 		max(): number | undefined;
 		/**
-			* returns the lowest value in the array
+			* Returns the lowest value in the array
 			* 
-			* returns NaN if the array is not of type number[]
+			* Returns NaN if the array is not of type number[]
 		*/
 		min(): number | undefined;
 		/**
-			* returns the amount of times an element occurs in the array
+			* Returns the amount of times an element occurs in the array
 			* 
-			* returns 0 if the element does not occur in the array
-			* @param i the element that has to be counted
-		*/
-		count(i: T): number;
-		/**
-			* returns a boolean if the item indeed occurs n times in the array
+			* Returns 0 if the element does not occur in the array
 			*
-			* @param i the element that has to be checked
-			*
-			* @param n the amount of times the element has to occur
+			* @param item The element that has to be counted
 		*/
-		includesN(i: T, n: number): boolean | undefined;
+		count(item: T): number;
 		/**
-			* returns a list of the duplicate items
+			* Returns a boolean if the item indeed occurs n times in the array
+			*
+			* @param item The element that has to be checked
+			*
+			* @param amount The amount of times the element has to occur
+		*/
+		includesN(item: T, amount: number): boolean | undefined;
+		/**
+			* Returns a list of the duplicate items
 			*/
-		dupilicates(): Array<T>;
+		duplicates(): Array<T>;
+		/**
+			* Returns a list of unique items
+		*/
+		removeDuplicates(): Array<T>;
+		/**
+			*
+			* Does the operation on every value in the list 
+			*
+			* Returns undefined if list is not of type number[]
+			*
+			* @param operator +, -, * or /
+			*
+			* @param value A number that you want to do the operation with
+		*/
+		math(operator: string, value: number): Array<T> | undefined;
 	}
 }
 
@@ -64,17 +80,38 @@ Array.prototype.max = function () {
 	return this.length ? Math.max.apply(null, this) : undefined;
 }
 
-Array.prototype.count = function (i: any) {
-	return this.length ? this.filter(item => item === i).length : 0;
+Array.prototype.count = function (item) {
+	return this.length ? this.filter(i => i === item).length : 0;
 }
 
-Array.prototype.includesN = function(i: any, n: number) {
-	this.filter(item => item === i)
-	return this.length ? this.filter(item => item === i).length === n ? true : false : undefined;
+Array.prototype.includesN = function(item, amount) {
+	return this.length ? this.filter(i => i === item).length === amount ? true : false : undefined;
 }
 
-Array.prototype.dupilicates = function() {
+Array.prototype.duplicates = function() {
 	return this
 		.filter((item, index) => this.indexOf(item) != index)
-		.filter((item, index, self) => self.indexOf(item) === index);
+		.removeDuplicates();
+}
+
+Array.prototype.removeDuplicates = function() {
+	return this.filter((item, index, self) => self.indexOf(item) === index);
+}
+
+Array.prototype.math = function(operator, value) {
+	if(!this.every(item => typeof item === 'number')) {
+		return undefined;
+	}
+	switch(operator) {
+		case "+":
+			return this.map(item => item + value);
+		case "-":
+			return this.map(item => item - value);
+		case "*":
+			return this.map(item => item * value);
+		case "/":
+			return this.map(item => item / value);
+		default: 
+			return undefined;
+	}
 }

@@ -19,7 +19,7 @@
     "object extension"
   ],
   "author": "blueberi",
-  "license": "ISC",
+  "license": "MIT",
   "files": [
     "lib/**/*"
   ],
