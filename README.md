@@ -8,7 +8,7 @@ you now write ```const lastElement = array.last();``` 😲
 
 <hr>
 
-Functionality: 
+#### Functionality: 
 
 -  ```array.first()``` returns the first element of an array
 - ```array.last()``` returns the last element of an array
@@ -18,6 +18,15 @@ Functionality:
 - ```array.includesN(item, amount)``` returns a boolean if the item indeed occurs n times in the array
 
 <hr>
+
+#### Usage:
+
+``` import 'yaae';```
+
+that's... it. sorry
+
+<hr>
+
 
 note: for min() and max() to work the array has to be of type ```number[]```. If this is not the case, then it will return NaN.
 
