@@ -27,16 +27,20 @@ that's... it. sorry
 
 <hr>
 
+ #### Notes:
 
-note: for min() and max() to work the array has to be of type ```number[]```. If this is not the case, then it will return NaN.
+- for min() and max() to work the array has to be of type ```number[]```. 
+  - If this is not the case, then it will return NaN.
 
-note: if there is no element in ```array.count(item)``` that is equal to item then it will return undefined
+- if there is no element in ```array.count(item)``` that is equal to item then it will return undefined
 
 <hr>
 
 If anyone has any improvement for this small library then just make an issue or pull request.
 
 <hr>
+
+#### Installation:
 
 If you want to work on it follow these incredibly awesome steps:
 ```
@@ -52,6 +56,8 @@ If you want to work on it follow these incredibly awesome steps:
 ```
 
 <hr>
+
+#### thanks:
 
 Also I would like to give thanks to this article: [Step by step: Building and publishing an NPM Typescript package.](https://itnext.io/step-by-step-building-and-publishing-an-npm-typescript-package-44fe7164964c). 
 It helped me set everything up since I've never published any node module.
