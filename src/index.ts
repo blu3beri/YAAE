@@ -41,6 +41,10 @@ declare global {
 			* @param n the amount of times the element has to occur
 		*/
 		includesN(i: T, n: number): boolean | undefined;
+		/**
+			* returns a list of the duplicate items
+			*/
+		dupilicates(): Array<T>;
 	}
 }
 
@@ -67,4 +71,10 @@ Array.prototype.count = function (i: any) {
 Array.prototype.includesN = function(i: any, n: number) {
 	this.filter(item => item === i)
 	return this.length ? this.filter(item => item === i).length === n ? true : false : undefined;
+}
+
+Array.prototype.dupilicates = function() {
+	return this
+		.filter((item, index) => this.indexOf(item) != index)
+		.filter((item, index, self) => self.indexOf(item) === index);
 }

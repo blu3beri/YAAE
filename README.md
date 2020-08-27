@@ -16,6 +16,7 @@ you now write ```const lastElement = array.last();``` 😲
 - ```array.max()``` returns the highest value of an array
 - ```array.count(item)``` returns amount of times an element occurs in an array
 - ```array.includesN(item, amount)``` returns a boolean if the item indeed occurs n times in the array
+- ```array.duplicates()``` returns an array of the items that were duplicate
 
 <hr>
 
@@ -32,11 +33,24 @@ that's... it. sorry
 - for min() and max() to work the array has to be of type ```number[]```. 
   - If this is not the case, then it will return NaN.
 
-- if there is no element in ```array.count(item)``` that is equal to item then it will return undefined
+- If there is no element in ```array.count(item)``` that is equal to item then it will return undefined
+
+ - If ```array.duplicates()``` has no duplicates it will return an empty array.
+  - The array that is returned only gives 1 element of the duplicated items 
+    - So ```[1,1,1,1,2,3].duplicates()``` will return ```[1];```
 
 <hr>
 
-If anyone has any improvement for this small library then just make an issue or pull request.
+#### Contribution:
+
+- If anyone has any improvement for this small library then just make an issue or pull request
+- New suggestions are always welcome
+
+<hr>
+
+#### Issues;
+
+- No documentation page or 'readable' markdown (If anyone is interested...)
 
 <hr>
 
