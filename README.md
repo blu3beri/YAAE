@@ -21,7 +21,7 @@ you now write ```const lastElement = array.last();``` 😲
 
 #### Usage:
 
-``` import 'yaae';```
+``` import 'yaae';``` or ```require('yaae');```
 
 that's... it. sorry
 
