@@ -102,6 +102,9 @@ Array.prototype.math = function(operator, value) {
 	if(!this.every(item => typeof item === 'number')) {
 		return undefined;
 	}
+	if(typeof value !== 'number') {
+		return undefined;
+	}
 	switch(operator) {
 		case "+":
 			return this.map(item => item + value);

@@ -10,13 +10,15 @@ you now write ```const lastElement = array.last();``` 😲
 
 #### Functionality: 
 
--  ```array.first()``` returns the first element of an array
-- ```array.last()``` returns the last element of an array
-- ```array.min()``` returns the lowest value of an array
-- ```array.max()``` returns the highest value of an array
-- ```array.count(item)``` returns amount of times an element occurs in an array
-- ```array.includesN(item, amount)``` returns a boolean if the item indeed occurs n times in the array
-- ```array.duplicates()``` returns an array of the items that were duplicate
+- ```Array.first()``` returns the first element of an array
+- ```Array.last()``` returns the last element of an array
+- ```Array.min()``` returns the lowest value of an array
+- ```Array.max()``` returns the highest value of an array
+- ```Array.count(item)``` returns amount of times an element occurs in an array
+- ```Array.includesN(item, amount)``` returns a boolean if the item indeed occurs n times in the array
+- ```Array.duplicates()``` returns the array of the items that were duplicate
+- ```Array.removeDuplicates()``` returns the array without any duplicates
+- ```Array.math(operator, value)``` returns the array with the operation (+,-,*,/) on every item
 
 <hr>
 
@@ -30,14 +32,17 @@ that's... it. sorry
 
  #### Notes:
 
-- for min() and max() to work the array has to be of type ```number[]```. 
+- for ```Array.min()``` and ```Array.max()``` to work the array has to be of type ```number[]```. 
   - If this is not the case, then it will return NaN.
 
 - If there is no element in ```array.count(item)``` that is equal to item then it will return undefined
 
- - If ```array.duplicates()``` has no duplicates it will return an empty array.
+ - If ```Array.duplicates()``` has no duplicates it will return an empty array.
   - The array that is returned only gives 1 element of the duplicated items 
     - So ```[1,1,1,1,2,3].duplicates()``` will return ```[1];```
+
+- If ```Array.math(operator, value)``` the operator is not either +, -, * or / then it will return undefined
+ - Same goes for the value if it is not of type number
 
 <hr>
 
