@@ -40,3 +40,8 @@ If you want to work on it follow these incredibly awesome steps:
 9. touch app.ts
 10. echo "import 'yaae';" >> app.ts; # for typescript
 ```
+
+<hr>
+
+Also I would like to give thanks to this article: [Step by step: Building and publishing an NPM Typescript package.](https://itnext.io/step-by-step-building-and-publishing-an-npm-typescript-package-44fe7164964c). 
+It helped me set everything up since I've never published any node module.
