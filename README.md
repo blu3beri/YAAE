@@ -10,11 +10,12 @@ you now write ```const lastElement = array.last();``` 😲
 
 Functionality: 
 
-```array.first()``` returns the first element of an array
-```array.last()``` returns the last element of an array
-```array.min()``` returns the lowest value of an array
-```array.max()``` returns the highest value of an array
-```array.count(item)``` returns amount of times an element occurs in an array
+-  ```array.first()``` returns the first element of an array
+- ```array.last()``` returns the last element of an array
+- ```array.min()``` returns the lowest value of an array
+- ```array.max()``` returns the highest value of an array
+- ```array.count(item)``` returns amount of times an element occurs in an array
+- ```array.includesN(item, amount)``` returns a boolean if the item indeed occurs n times in the array
 
 <hr>
 

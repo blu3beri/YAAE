@@ -7,6 +7,7 @@ declare global {
         max(): number | undefined;
         min(): number | undefined;
         count(i: T): number | undefined;
+        includesN(i: T, n: number): boolean | undefined;
     }
 }
 
@@ -28,4 +29,9 @@ Array.prototype.max = function () {
 
 Array.prototype.count = function (i: any) {
     return this.length ? this.filter(item => item === i).length : undefined;
+}
+
+Array.prototype.includesN = function(i: any, n: number) {
+    this.filter(item => item === i)
+    return this.length ? this.filter(item => item === i).length === n ? true : false : undefined;
 }
