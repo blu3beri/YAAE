@@ -44,7 +44,7 @@ declare global {
 
 		/**
 			* 
-			* Counts the  item in the array
+			* Counts the item in the array
 			* 
 			* @param item The item that has to be counted
 			* 
@@ -75,7 +75,7 @@ declare global {
 			* 
 			* @returns a list of the duplicate items
 			*
-			*/
+		*/
 		duplicates(unique?: boolean): Array<T>;
 
 		/**
@@ -101,6 +101,73 @@ declare global {
 			*
 		*/
 		math(operator: string, value: number): Array<T> | undefined;
+
+		/**
+			* 
+			* This function finds the even numbers in a given array
+			*
+			* @returns an array with only the even numbers
+			* 
+			* @throws TypeError if the array is not of type number[]
+		*/
+		even(): Array<T>;
+
+		/**
+			* 
+			* This function finds the odd numbers in a given array
+			*
+			* @returns an array with only the odd numbers
+			* 
+			* @throws TypeError if the array is not of type number[]
+		*/
+		odd(): Array<T>;
+
+		/**
+			* 
+			* Inserts an item on the index position and shifts everything after
+			* 
+			* @param index 
+			* @param item
+			* 
+			* @returns an array with the item inserted on the index position (shifts all the items after index + 1)
+			*
+			* @throws RangeError if the index is out of range
+			* @throws TypeError if index is not of type number
+			*
+
+		*/
+		insert(index: number, item: any): Array<T>;
+
+		/**
+			* 
+			* Replaces an item in the given array at the index
+			* 
+			* @param index 
+			* @param item 
+			* 
+			* @returns an array where the item at index is replaced by the new item
+			*
+			* @throws RangeError if the index is out of range
+			* @throws TypeError if index is not of type number
+			*
+		*/
+		replace(index: number, item: any): Array<T>;
+
+		/**
+			* 
+			* Finds the item by index and repeats it a given amount of times
+			* 
+			* @param index is the index of the item that you want to repeat
+			* @param amount is the amount of times you want to repeat is
+			* 
+			* @returns the original array with a repeated value
+			* 
+			* @throws RangeError if the index is out of range
+			* @throws TypeError if index is not of type number
+			* @throws TypeError if amount is not of type number
+			*
+		*/
+		repeat(index: number, amount: number): Array<T>;
 	}
 }
 
@@ -170,4 +237,54 @@ Array.prototype.math = function(operator, value) {
 		default: 
 			return undefined;
 	}
+}
+
+Array.prototype.even = function () {
+	if(!this.every(item => typeof item === 'number')) {
+		throw new TypeError(`Type error: ${this} is not of type number[].`);
+	}
+	return this.filter(item => item % 2 === 0);
+}
+
+Array.prototype.odd = function () {
+	if(!this.every(item => typeof item === 'number')) {
+		throw new TypeError(`Type error: ${this} is not of type number[].`);
+	}
+	return this.filter(item => item % 2 !== 0);
+}
+
+Array.prototype.insert = function(index, item) {
+	if(typeof index !== 'number') {
+		throw new TypeError(`Type error: index ${index} is not of type number.`);
+	}
+	if(index >= this.length) {
+		throw new RangeError(`Range error: ${index} is out of range`);
+	}
+	this.splice(index, 0, item);
+	return this;
+}
+
+Array.prototype.replace = function(index, item) {
+	if(typeof index !== 'number') {
+		throw new TypeError(`Type error: index ${index} is not of type number.`);
+	}
+	if(index >= this.length) {
+		throw new RangeError(`Range error: ${index} is out of range`);
+	}
+	this.splice(index, 1, item);
+	return this;
+}
+
+Array.prototype.repeat = function(index, amount) {
+	if(typeof index !== 'number') {
+		throw new TypeError(`Type error: index ${index} is not of type number.`);
+	}
+	if(typeof amount !== 'number') {
+		throw new TypeError(`Type error: amount ${amount} is not of type number.`);
+	}
+	const item = this[index];
+	for(let i = 0; i < amount; i++) {
+		this.insert(index, item);
+	}
+	return this;
 }

@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 ## [0.0.8] - 28-09-2020
+## Added
+- Functions:
+    - ```Array.even()```
+    - ```Array.odd()```
+    - ```Array.insert(index, item)```
+    - ```Array.replace(index, item)```
+    - ```Array.repeat(index, amount)```
 ## Changed
 - Improved package.json with more info
 
@@ -64,6 +71,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initialised project
 
+[0.0.8]: https://www.npmjs.com/package/yaae/v/0.0.8
 [0.0.7]: https://www.npmjs.com/package/yaae/v/0.0.7
 [0.0.6]: https://www.npmjs.com/package/yaae/v/0.0.6
 [0.0.5]: https://www.npmjs.com/package/yaae/v/0.0.5
