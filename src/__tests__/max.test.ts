@@ -5,18 +5,18 @@ const stringArray = ["a","b","c","d","e","d","e","d","e","e","e"];
 const mixedArray = [true,2,3,4,"a","b","123"];
 const emptyArray: string[] = []; // Jest wanted me to give it a type such as string[], any[] did not work. No clue why ;)
 
-test('max from number array', () => {
-    expect(numberArray.max()).toBe(10);
+test('max on numberArray', () => {
+	expect(numberArray.max()).toBe(10);
 });
 
-test('max from string array', () => {
-    expect(stringArray.max()).toEqual(NaN);
+test("min on stringArray", () => {
+	expect(() => {stringArray.min()}).toThrow(TypeError);
 });
 
-test('max from mixed array', () => {
-    expect(mixedArray.max()).toBe(NaN);
+test("min on mixedArray", () => {
+	expect(() => {mixedArray.min()}).toThrow(TypeError);
 });
 
-test('max from empty array', () => {
-    expect(emptyArray.max()).toEqual(undefined);
+test('min on emptyArray', () => {
+	expect(emptyArray.min()).toEqual(undefined);
 });

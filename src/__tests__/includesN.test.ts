@@ -5,18 +5,18 @@ const stringArray = ["a","b","c","d","e","d","e","d","e","e","e","234"];
 const mixedArray = [true,2,3,4,"a","b","123"];
 const emptyArray: string[] = []; // Jest wanted me to give it a type such as string[], any[] did not work. No clue why ;)
 
-test('Number array includes 10 four times', () => {
+test('numberArray includes 10 four times', () => {
 	expect(numberArray.includesN(10, 4)).toBe(true);
 });
 
-test('String array includes b eight times', () => {
+test('stringArray includes b eight times', () => {
 	expect(stringArray.includesN('b', 8)).toBe(false);
 });
 
-test('Mixed array includes true one time', () => {
+test('mixedArray includes true one time', () => {
 	expect(mixedArray.includesN(true, 1)).toBe(true);
 });
 
-test('Empty array includes foo 100 times', () => {
+test('emptyArray includes foo 100 times', () => {
 	expect(emptyArray.includesN('foo', 100)).toEqual(undefined);
 });

@@ -8,75 +8,84 @@ you now write ```const lastElement = array.last();``` 😲
 
 <hr>
 
-#### Functionality: 
+## Functions
 
-- ```Array.first()``` returns the first element of an array
-- ```Array.last()``` returns the last element of an array
-- ```Array.min()``` returns the lowest value of an array
-- ```Array.max()``` returns the highest value of an array
-- ```Array.count(item)``` returns amount of times an element occurs in an array
-- ```Array.includesN(item, amount)``` returns a boolean if the item indeed occurs n times in the array
-- ```Array.duplicates()``` returns the array of the items that were duplicate
-- ```Array.removeDuplicates()``` returns the array without any duplicates
-- ```Array.math(operator, value)``` returns the array with the operation (+,-,*,/) on every item
+- **Function** ```Array.first()```
+  - **Returns** the first element of the given array
+- **Functrion** ```Array.last()```
+  - **Returns** the last element of the given array
+- **Function** ```Array.max()```
+  - **Returns** the highest value of the given array
+  - **Throws** TypeError when every element in the given array is not of type number
+- **Function** ```Array.min()```
+  - **Returns** The lowest value of the given array
+  - **Throws** TypeError when every element in the given array is not of type number
+- **Function** ```Array.count(item)```
+  - **Returns** the amount of times the ```item``` occurs in the array
+- **Function** ```Array.includesN(item, amount)```
+  - **Returns** a boolean that shows if the given ```item``` occurs ```amount``` of times in the array
+  - **Throws** TypeError is ```amount``` is not of type number
+- **Function** ```Array.duplicates()```
+  - **Returns** an array of the items that occur multiple times in the array
+- **Function** ```Array.removeDuplicates()```
+  - **Returns** an array where all the duplicates are removed
+- **Function** ```Array.math(operator, value)```
+  - **Returns** an array where every item has been operated on based on the value
+  - **Throws** TypeError if the operator is not +, -, * or /
+  - **Throws** TypeError if the value is not of type number
+  - **Throws** TypeError if the every item in the list is not of type number
 
-<hr>
 
-#### Usage:
 
-``` import 'yaae';``` or ```require('yaae');```
+## Examples
 
-that's... it. sorry
+```typescript
+import('yaae');
 
-<hr>
+const arr = [1,2,3,4,5,6,7,8,9,10];
 
- #### Notes:
+arr.first();
+// returns 1
 
-- for ```Array.min()``` and ```Array.max()``` to work the array has to be of type ```number[]```. 
-  - If this is not the case, then it will return NaN.
+arr.last();
+// returns 10
 
-- If there is no element in ```array.count(item)``` that is equal to item then it will return undefined
+arr.min();
+// returns 1
 
- - If ```Array.duplicates()``` has no duplicates it will return an empty array.
-  - The array that is returned only gives 1 element of the duplicated items 
-    - So ```[1,1,1,1,2,3].duplicates()``` will return ```[1];```
+arr.max();
+// returns 10
 
-- If ```Array.math(operator, value)``` the operator is not either +, -, * or / then it will return undefined
- - Same goes for the value if it is not of type number
+arr.count(2);
+// returns 1
 
-<hr>
+arr.includesN(10, 50);
+// returns false
 
-#### Contribution:
+arr.duplicates();
+// returns []
 
-- If anyone has any improvement for this small library then just make an issue or pull request
-- New suggestions are always welcome
+arr.removeDuplicates();
+// returns [1,2,3,4,5,6,7,8,9,10]
 
-<hr>
-
-#### Issues;
-
-- No documentation page or 'readable' markdown (If anyone is interested...)
-
-<hr>
-
-#### Installation:
-
-If you want to work on it follow these incredibly awesome steps:
-```
-1. git clone https://www.github.com/blu3beri/yaae.git && cd yaae
-3. npm i
-4. npm run build
-5. cd ../
-6. mkdir test-dir && cd test-dir
-7. npm init -y
-8. npm i ../yaae
-9. touch app.ts
-10. echo "import 'yaae';" >> app.ts; # for typescript
+arr.math("+", 10);
+// returns [11,12,13,14,15,16,17,18,19,20]
 ```
 
-<hr>
 
-#### thanks:
 
-Also I would like to give thanks to this article: [Step by step: Building and publishing an NPM Typescript package.](https://itnext.io/step-by-step-building-and-publishing-an-npm-typescript-package-44fe7164964c). 
-It helped me set everything up since I've never published any node module.
+## But, why?
+
+Well, I get that. Almost every function that I added to the ```Array``` is very easy to code. And it was never the point to create difficult functionality and make the ```Array``` object better. It was more to make code more readable. ```array[array.length - 1];``` for example, everyone knows that it is the last item in an array, but wouldn't ```array.last();``` make so much more sense? Ofcourse if in the future I come up with more difficult functionality it would be a great addition.
+
+
+
+## Contributing
+
+If you want to add functionality or complain about something. Feel free to open an issue or pull request on my github and if I am still working on this project I will review it. If I am not working anymore on this project feel free to clone it and continue development.
+
+
+
+## testing
+
+Testing has been done with jest. Note that I am no where near an expert with this type of testing and if anyone feels like they can improve on it... I won't stop you :).
