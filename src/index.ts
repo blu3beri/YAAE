@@ -44,7 +44,7 @@ declare global {
 
 		/**
 			* 
-			* Counts the given item in the array
+			* Counts the  item in the array
 			* 
 			* @param item The item that has to be counted
 			* 

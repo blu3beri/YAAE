@@ -11,25 +11,34 @@ you now write ```const lastElement = array.last();``` 😲
 ## Functions
 
 - **Function** ```Array.first()```
-  - **Returns** the first element of the given array
+  - This function finds the first item in the array
+  - **Returns** the first element of the array
 - **Functrion** ```Array.last()```
-  - **Returns** the last element of the given array
+  - This function finds the last item in the array
+  - **Returns** the last element of the array
 - **Function** ```Array.max()```
-  - **Returns** the highest value of the given array
-  - **Throws** TypeError when every element in the given array is not of type number
+  - This function finds the highest value in the array
+  - **Returns** the highest value of the array
+  - **Throws** TypeError when every element in the array is not of type number
 - **Function** ```Array.min()```
-  - **Returns** The lowest value of the given array
-  - **Throws** TypeError when every element in the given array is not of type number
+  - This function finds the lowest value of the array
+  - **Returns** The lowest value of the array
+  - **Throws** TypeError when every element in the array is not of type number
 - **Function** ```Array.count(item)```
+  - This function counts how many times ```item``` occurs in the array
   - **Returns** the amount of times the ```item``` occurs in the array
 - **Function** ```Array.includesN(item, amount)```
-  - **Returns** a boolean that shows if the given ```item``` occurs ```amount``` of times in the array
+  - This function checks whether ```item``` occurs ```amount``` times
+  - **Returns** a boolean that shows if the  ```item``` occurs ```amount``` of times in the array
   - **Throws** TypeError is ```amount``` is not of type number
 - **Function** ```Array.duplicates()```
+  - This functions gives all the duplicates in the array back
   - **Returns** an array of the items that occur multiple times in the array
 - **Function** ```Array.removeDuplicates()```
+  - This function removes all the duplicates in the array
   - **Returns** an array where all the duplicates are removed
 - **Function** ```Array.math(operator, value)```
+  - This function does a math operation on every item in the array based on the given value
   - **Returns** an array where every item has been operated on based on the value
   - **Throws** TypeError if the operator is not +, -, * or /
   - **Throws** TypeError if the value is not of type number
