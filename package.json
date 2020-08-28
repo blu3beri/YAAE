@@ -1,18 +1,16 @@
 {
 	"name": "yaae",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"description": "Yet Another Array Extension`",
-		"repository": 
-		{
-		"type" : "git",
-		"url" : "https://github.com/blu3beri/yaae.git"
-		},
-		"homepage": "https://github.com/blu3beri/yaae#readme",
-			"bugs": 
-			{ 
-				"url" : "https://github.com/blu3beri/yaae/issues", 
-				"email" : "dev@blueberi.nl"
-			},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/blu3beri/yaae.git"
+	},
+	"homepage": "https://github.com/blu3beri/yaae#readme",
+	"bugs": {
+		"url": "https://github.com/blu3beri/yaae/issues",
+		"email": "dev@blueberi.nl"
+	},
 	"main": "lib/index.js",
 	"types": "lib/index.d.ts",
 	"scripts": {
@@ -27,8 +25,8 @@
 		"Array",
 		"Array extension",
 		"js",
-			"object extension",
-			"prototype"
+		"object extension",
+		"prototype"
 	],
 	"author": "blueberi",
 	"license": "MIT",
