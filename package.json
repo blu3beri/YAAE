@@ -1,36 +1,48 @@
 {
-  "name": "yaae",
-  "version": "0.0.6",
-  "description": "Yet Another Array Extension`",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
-  "scripts": {
-    "test": "jest --config jestconfig.json",
-    "build": "tsc",
-    "format": "prettier --write \"src/**/*.ts\"",
-    "lint": "tslint -p tsconfig.json",
-    "prepare": "npm run test && npm run build"
-  },
-  "keywords": [
-    "YAAE",
-    "Array",
-    "Array extension",
-    "js",
-    "object extension"
-  ],
-  "author": "blueberi",
-  "license": "MIT",
-  "files": [
-    "lib/**/*"
-  ],
-  "devDependencies": {
-    "@types/jest": "^26.0.10",
-    "jest": "^26.4.2",
-    "prettier": "^2.1.1",
-    "ts-jest": "^26.3.0",
-    "tslint": "^6.1.3",
-    "tslint-config-prettier": "^1.18.0",
-    "typescript": "^4.0.2"
-  },
-  "dependencies": {}
+	"name": "yaae",
+	"version": "0.0.6",
+	"description": "Yet Another Array Extension`",
+		"repository": 
+		{
+		"type" : "git",
+		"url" : "https://github.com/blu3beri/yaae.git"
+		},
+		"homepage": "https://github.com/blu3beri/yaae#readme",
+			"bugs": 
+			{ 
+				"url" : "https://github.com/blu3beri/yaae/issues", 
+				"email" : "dev@blueberi.nl"
+			},
+	"main": "lib/index.js",
+	"types": "lib/index.d.ts",
+	"scripts": {
+		"test": "jest --config jestconfig.json",
+		"build": "tsc",
+		"format": "prettier --write \"src/**/*.ts\"",
+		"lint": "tslint -p tsconfig.json",
+		"prepare": "npm run test && npm run build"
+	},
+	"keywords": [
+		"YAAE",
+		"Array",
+		"Array extension",
+		"js",
+			"object extension",
+			"prototype"
+	],
+	"author": "blueberi",
+	"license": "MIT",
+	"files": [
+		"lib/**/*"
+	],
+	"devDependencies": {
+		"@types/jest": "^26.0.10",
+		"jest": "^26.4.2",
+		"prettier": "^2.1.1",
+		"ts-jest": "^26.3.0",
+		"tslint": "^6.1.3",
+		"tslint-config-prettier": "^1.18.0",
+		"typescript": "^4.0.2"
+	},
+	"dependencies": {}
 }
