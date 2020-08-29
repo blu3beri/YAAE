@@ -71,7 +71,7 @@ declare global {
 			* 
 			* Finds every duplicate in the array
 			*
-			* @param unique is a boolean to see if every item in the array should be unique (defaults to true)
+			* @param unique is a boolean to see if every item in the array should be unique. default -> true
 			* 
 			* @returns a list of the duplicate items
 			*
@@ -168,6 +168,18 @@ declare global {
 			*
 		*/
 		repeat(index: number, amount: number): Array<T>;
+		/**
+			* 
+			* Rotates an array right or left based on the parameter.
+			* 
+			* @param reverse true -> rotate left. false -> rotate right. default -> false
+			* 
+			* @throws TypeError if reverse is not of type boolean
+			* @throws Error if array is empty
+			* 
+		*/
+		rotate(reverse?: boolean): Array<T>;
+
 	}
 }
 
@@ -285,6 +297,21 @@ Array.prototype.repeat = function(index, amount) {
 	const item = this[index];
 	for(let i = 0; i < amount; i++) {
 		this.insert(index, item);
+	}
+	return this;
+}
+
+Array.prototype.rotate = function(reverse = false) {
+	if(typeof reverse !== 'boolean') {
+		throw new TypeError(`Type error: reverse ${Boolean} is not of type boolean.`);
+	}
+	if(this.length === 0) {
+		throw new Error('The given array is empty.');
+	}
+	if(reverse) {
+		this.push(this.shift());
+	} else {
+		this.unshift(this.pop());
 	}
 	return this;
 }
