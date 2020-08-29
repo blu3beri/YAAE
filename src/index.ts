@@ -170,12 +170,13 @@ declare global {
 		repeat(index: number, amount: number): Array<T>;
 		/**
 			* 
-			* Rotates an array right or left based on the parameter.
+			* Rotates an array right or left based on the parameter
 			* 
 			* @param reverse true -> rotate left. false -> rotate right. default -> false
+			*
+			* @returns an array where the items are rotated
 			* 
 			* @throws TypeError if reverse is not of type boolean
-			* @throws Error if array is empty
 			* 
 		*/
 		rotate(reverse?: boolean): Array<T>;
@@ -306,7 +307,7 @@ Array.prototype.rotate = function(reverse = false) {
 		throw new TypeError(`Type error: reverse ${Boolean} is not of type boolean.`);
 	}
 	if(this.length === 0) {
-		throw new Error('The given array is empty.');
+		return [];
 	}
 	if(reverse) {
 		this.push(this.shift());

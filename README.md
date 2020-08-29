@@ -84,6 +84,12 @@ you now write ```const lastElement = array.last();``` 😲
   - **Throws** TypeError index is not a number
   - **Throws** TypeError if amount is not of type number
   - **Throws** RangeError if index is out of range
+- **Function** ```Array.rotate(reverse)```    
+  - Rotates an array right or left based on the parameter
+  - **Params**
+    - ```reverse``` true -> rotate left. false -> rotate right. default -> false
+  - **Returns** an array where the items are rotated
+  - **Throws** TypeError if reverse is not of type boolean
 
 <hr>
 
@@ -135,6 +141,9 @@ arr.replace(10,2);
 
 arr.repeat(2,5);
 // returns [1,2,3,3,3,3,3,3,4,5,6,7,8,9,10]
+
+arr.rotate(true)
+// returns [2,3,4,5,6,7,8,9,10,1]
 ```
 
 <hr>

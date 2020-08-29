@@ -17,6 +17,6 @@ test('rotate left on mixedArray', () => {
 	expect(mixedArray.rotate(true)).toStrictEqual([2,3,4,"a","b","123",true]);
 });
 
-test("rotate left on emptyArrray", () => {
-	expect(() => {emptyArray.rotate(true)}).toThrow(Error);
+test('rotate left on emptyArray', () => {
+	expect(emptyArray.rotate(true)).toStrictEqual([]);
 });
